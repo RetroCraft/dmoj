@@ -6,7 +6,8 @@ endfunction
 " Command to open stdin file
 function! FindTestFile()
 	execute "normal \<C-j>"
-	edit test/%:t:r
+	let l:root = expand("%:t:r")
+	execute "edit test/" . l:root
 	execute "normal 5\<C-w>_"
 endfunction
 
