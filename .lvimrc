@@ -13,5 +13,5 @@ endfunction
 augroup dmoj
 	autocmd!
 	autocmd FileType java nnoremap <F5> :call Dmoj()<CR>
-	autocmd BufNewFile,BufRead src/* :call FindTestFile()<CR>
+	autocmd BufNewFile,BufRead src/* :call FindTestFile()
 augroup END
