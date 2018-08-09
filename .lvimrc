@@ -1,0 +1,17 @@
+" Command to compile and run
+function! Dmoj()
+	write
+	!javac -d bin % && java -cp bin %:t:r < test/%:t:r
+endfunction
+" Command to open stdin file
+function! FindTestFile()
+	execute "normal \<C-j>"
+	edit test/%:t:r
+	execute "normal 5\<C-w>_"
+endfunction
+
+augroup dmoj
+	autocmd!
+	autocmd FileType java nnoremap <F5> :call Dmoj()<CR>
+	autocmd BufNewFile,BufRead src/* :call FindTestFile()<CR>
+augroup END
