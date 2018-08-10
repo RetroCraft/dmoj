@@ -1,18 +1,26 @@
 " Command to compile and run
 function! Dmoj()
-	write
-	!javac -d bin % && java -cp bin %:t:r < test/%:t:r
+  write
+  !javac -d bin % && java -cp bin %:t:r < test/%:t:r
 endfunction
 " Command to open stdin file
 function! FindTestFile()
-	execute "normal \<C-j>"
-	let l:root = expand("%:t:r")
-	execute "edit test/" . l:root
-	execute "normal 5\<C-w>_"
+  execute "normal \<C-j>"
+  let l:root = expand("%:t:r")
+  execute "edit test/" . l:root
+  execute "normal 5\<C-w>_"
 endfunction
 
 augroup dmoj
-	autocmd!
-	autocmd FileType java nnoremap <F5> :call Dmoj()<CR>
-	autocmd BufNewFile,BufRead src/* :call FindTestFile()
+  autocmd!
+  autocmd FileType java nnoremap <F5> :call Dmoj()<CR>
+  autocmd FileType jelly nnoremap <F5> :!jelly fu % < test/%:t:r<CR>
+  autocmd BufNewFile,BufRead src/* :call FindTestFile()
 augroup END
+
+set expandtab " insert spaces rather than tabs for <Tab>
+set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+set tabstop=8 " the visible width of tabs
+set softtabstop=0 " edit as if the tabs are 2 characters wide
+set shiftwidth=2 " number of spaces to use for indent and unindent
+set shiftround " round indent to a multiple of 'shiftwidth'
