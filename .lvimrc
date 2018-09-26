@@ -1,5 +1,5 @@
 " Command to compile and run
-function! Dmoj()
+function! DmojJava()
   write
   !javac -d bin % && java -cp bin %:t:r < test/%:t:r
 endfunction
@@ -13,8 +13,9 @@ endfunction
 
 augroup dmoj
   autocmd!
-  autocmd FileType java nnoremap <F5> :call Dmoj()<CR>
+  autocmd FileType java nnoremap <F5> :call DmojJava()<CR>
   autocmd FileType jelly nnoremap <F5> :!jelly fu % < test/%:t:r<CR>
+  autocmd FileType haskell nnoremap <F5> :!runghc % < test/%:t:r<CR>
   autocmd BufNewFile,BufRead src/* :call FindTestFile()
 augroup END
 
