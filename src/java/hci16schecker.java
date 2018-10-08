@@ -17,6 +17,8 @@ public class hci16schecker {
         }
       }
       System.out.println("Correct");
-    } catch (IOException e) { e.printStackTrace(); }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

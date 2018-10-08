@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class ccc14j1 {
   public static void main(String[] args) {
@@ -21,6 +20,8 @@ public class ccc14j1 {
         return;
       }
       System.out.println("Scalene");
-    } catch (IOException e) { e.printStackTrace(); }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class ccc14j3 {
   public static void main(String[] args) {
@@ -12,10 +11,14 @@ public class ccc14j3 {
         String[] line = in.readLine().split(" ");
         int rollA = Integer.parseInt(line[0]);
         int rollB = Integer.parseInt(line[1]);
-        if (rollA > rollB) david -= rollA;
-        if (rollB > rollA) antonia -= rollB;
+        if (rollA > rollB)
+          david -= rollA;
+        if (rollB > rollA)
+          antonia -= rollB;
       }
       System.out.println(antonia + "\n" + david);
-    } catch (IOException e) { e.printStackTrace(); }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

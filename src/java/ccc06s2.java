@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class ccc06s2 {
   public static void main(String[] args) {
@@ -15,6 +14,8 @@ public class ccc06s2 {
       for (char c : next)
         sb.append(map[c] > 0 ? map[c] : '.');
       System.out.println(sb.toString());
-    } catch (IOException e) { e.printStackTrace(); }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class ccc08j3 {
   public static void main(String[] args) {
@@ -20,6 +19,8 @@ public class ccc08j3 {
         currentPosition = to;
       }
       System.out.println(total);
-    } catch (IOException e) { e.printStackTrace(); }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }
